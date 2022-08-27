@@ -9,14 +9,14 @@ btn1.addEventListener("click", function(name){
     .then(response => response.json()) //text ---> json
     .then(data =>{
         let result = `<div><h1>City : ${data.name}</h1>
-        <h3>temperature : ${Math.floor(data["main"].temp-273)} °C</h3>
-        <h3>Description:  : ${data['weather'][0]['description']}</h3>
-        <h3>Humidity:  : ${data['main']['humidity']} %</h3>
-        <h3>Wind Speed:  : ${data['wind']['speed']} m/s</h3>
+        <h2>Temperature : ${Math.floor(data["main"].temp-273)} °C</h2>
+        <h2>Description:  : ${data['weather'][0]['description']}</h2>
+        <h2>Humidity:  : ${data['main']['humidity']} %</h2>
+        <h2>Wind Speed:  : ${data['wind']['speed']} m/s</h2>
         </div>`
         
         let container = document.querySelector(".data_container")
-        container.innerHTML += result
+        container.innerHTML = result
         console.log(data);
     }).catch(err => alert("Invalid city name!!"))
 })
